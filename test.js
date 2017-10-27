@@ -6,7 +6,7 @@ div.innerHTML = JSON.stringify(navigator.bluetooth);
 var bt = navigator.bluetooth;
 console.log(bt);
 console.log(navigator);
-var options = {filters:[{services:[SENSOR_SERVICE, 0x128d]}]};
+var options = {filters:[{services:[SENSOR_SERVICE]}]};
 navigator.bluetooth.requestDevice(options)
 /* Connecting to the device */
     .then(function (device) {
