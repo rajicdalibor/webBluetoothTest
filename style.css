@@ -1,0 +1,107 @@
+.thing {
+    padding: 7px;
+    font-size: large;
+}
+
+/*Disabling the text selection in htmlpages*!*/
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+            supported by Chrome and Opera */
+}
+
+input {
+   -webkit-touch-callout: auto !important;
+   -webkit-user-select: auto !important;
+   -khtml-user-select: auto !important;
+   -moz-user-select: auto !important;
+   -ms-user-select: auto !important;
+   user-select: auto !important;
+}
+
+md-toast.md-success-toast-theme {
+    background-color: green;
+}
+
+md-toast.md-error-toast-theme {
+    background-color: red;
+}
+
+.reading-display {
+    text-align: -webkit-right;
+    padding-right: 10px;
+    color: #03A9F4;
+    font-size: 22px;
+}
+
+.hayward-textfield {
+    display: block;
+    padding-top: 15px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.dialog {
+    font-size: 14px;
+}
+
+.md-button {
+    margin: 6px 8px 6px 8px;
+    border-radius: 3px;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    outline: none;
+
+}
+
+.md-button.md-raised:not([disabled]) {
+    text-transform: none;
+    width: 60px;
+    min-width: 10px;
+    margin-right: 2px;
+}
+
+.centered {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.md-raised {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.current-font {
+    font-size: 18px;
+    padding-top: 10px;
+    color: #03a9f4;
+    padding-left: 10px;
+}
+
+.box-height {
+    height: 240px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+    border: 1px solid #ccc;
+}
+
+.box-height div {
+    height: auto;
+    box-shadow: none !important;
+    border: none;
+}
+
+.mb-10 {
+    margin-bottom: 10px !important;
+}
+
+.mr-30 {
+    margin-right: 30px !important;
+}

@@ -1,0 +1,84 @@
+<md-dialog aria-label="Settings" ng-cloak class="dialog" style="width: 280px; height: 520px">
+    <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Settings</h2>
+                <span flex></span>
+                <md-button class="md-icon-button md-primary" aria-label="Close" ng-click="cancel()">
+                    <ng-md-icon icon="clear"></ng-md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content style="padding-top: 4px; padding-bottom: 4px; padding-right: 4px;">
+            <div>
+                <md-input-container style="padding-bottom: 1px">
+                    <label>Name</label>
+                    <input type="text" class="hayward-textfield" ng-model="inputData.name">
+                </md-input-container>
+                <md-input-container style="padding-bottom: 1px">
+                    <label>Units</label>
+                    <input type="text" class="hayward-textfield" ng-model="inputData.units">
+                </md-input-container>
+                <div layout="row">
+                    <div flex="50" style="padding-top: 19px;">
+                        <label>Display :</label>
+                    </div>
+                    <div flex="50">
+                        <md-input-container style="padding-bottom: 10px;">
+                            <md-select placeholder="Display" ng-model="inputData.graph"
+                                       style="padding-bottom: 6px;padding-top: 6px;padding-left: 0px;">
+                                <md-option value="text">Text</md-option>
+                                <md-option value="gauge">Gauge</md-option>
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="50">
+                        <md-input-container style="padding-top: 4px; padding-bottom: 4px">
+                            <label>Min(4mA):</label>
+                            <input type="number" class="hayward-textfield" ng-model="inputData.min">
+                        </md-input-container>
+                    </div>
+                    <div flex="50">
+                        <md-input-container style="padding-top: 4px; padding-bottom: 4px">
+                            <label>Max(20mA):</label>
+                            <input type="number" class="hayward-textfield" ng-model="inputData.max">
+                        </md-input-container>
+                    </div>
+                </div>
+                <div style="margin-bottom: 7px">
+                    <md-list-item>
+                        <p> Low Alarm : </p>
+                        <md-switch ng-model="inputData.alarmMinIsOn" aria-label="Switch 1" ng-change="lowAlarmToggle()">
+                        </md-switch>
+                        <md-input-container type="text" style="width: 60px; height: 18px">
+                            <label>Low</label>
+                            <input type="number" class="hayward-textfield" ng-model="inputData.alarmMinValue">
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <p> High Alarm : </p>
+                        <md-switch ng-model="inputData.alarmMaxIsOn" aria-label="Switch 2"
+                                   ng-change="highAlarmToggle()">
+                        </md-switch>
+                        <md-input-container type="text" style="width: 60px; height: 18px">
+                            <label>High</label>
+                            <input type="number" class="hayward-textfield" ng-model="inputData.alarmMaxValue">
+                        </md-input-container>
+                    </md-list-item>
+                </div>
+                <md-button style="padding: 0 6px 0 7px;" layout="column" l flex="30" flex-gt-sm="30"
+                           class="layout-column flex-gt-sm-30 flex-30 md-raised" ng-click="cancel()"> Cancel
+                </md-button>
+                <md-button style="padding: 0 6px 0 10px;" layout="column" flex="30" flex-gt-sm="30"
+                           class="layout-column flex-gt-sm-30 flex-30 md-raised md-warn" ng-click="reset()"> Reset
+                </md-button>
+                <md-button style="padding: 0 6px 0 12px;" layout="column" flex="30" flex-gt-sm="30"
+                           class="layout-column flex-gt-sm-30 flex-30 md-raised md-primary" ng-click="submitClick()">
+                    Save
+                </md-button>
+            </div>
+        </md-dialog-content>
+    </form>
+</md-dialog>

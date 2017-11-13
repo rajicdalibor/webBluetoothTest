@@ -1,18 +1,8 @@
-var div = document.getElementById('test');
-div.innerHTML = 'Darko';
-var SENSOR_SERVICE = "00000000-0001-11e1-9ab4-0002a5d5c51b";
+var buf = new ArrayBuffer(80); // 2 bytes for each char
+var bufView = new DataView(buf);
 
-div.innerHTML = JSON.stringify(navigator.bluetooth);
-var bt = navigator.bluetooth;
-console.log(bt);
-console.log(navigator);
-var options = {filters:[{services:[SENSOR_SERVICE]}]};
-navigator.bluetooth.requestDevice(options)
-/* Connecting to the device */
-    .then(function (device) {
-        self.bluetoothDevice = device;
-        div.innerHTML = 'povezano';
-        return device.gatt.connect();
-    }, function (error) {
-        div.innerHTML = 'nije uspesno';
-    })
+var str = '00040000000000000000000500010000000000000006000000000000000400070000000900060003';
+bufView.setUint16(0, str, false);
+// var u8buf = new Uint8Array(buffer);
+console.log(bufView);
+console.log(b)
