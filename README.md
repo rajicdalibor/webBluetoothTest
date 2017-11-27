@@ -35,7 +35,7 @@ because it's already in package.json.
 
 In order to get this app working, we need to provide it with some information about gateway. In order to get some information first we need to open account on BlueApp.io webpage:
 
-<img src="https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/mainpage.png" width="80%"/>
+<img src="https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/mainpage.png" width="80%" alt="Main page"/>
 
 <!-- ![](https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/mainpage.JPG | width=100 "Blueapp main page") -->
 
@@ -47,8 +47,7 @@ Now, with gateway available, we can test some of the applications listed in main
 For development and testing our new app on local machine, we need gateway's token, which tells application to which gateway it should connect for scanning for BLE devices.
 Selecting My Devices tab you can check all the gateways that are connected to particular organization. When we select the gateway we want to use, we can see gateway's details, where we can find Client Token that we need for our app.
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Gateway details")
-
+<img src="https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/gatewaydetails.png" width="80%" alt="Gateway details"/>
 
 ## Starting the app
 
@@ -132,19 +131,19 @@ When we get our application ready we can add it on Blueapp portal in our organiz
 
 Let's open our organization in organizations tab. There we can see all the organization that we are subscribed to, and we can list organization's apps.
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Organization details")
+<img src="https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/organization.png" width="80%" alt="Organization"/>
 
 Before we can add app to our organization, we have to post our app on some domain service, and set application's url to applications page. (You can upload it on your github account)
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Application setup")
-
+<img src="https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/applicationsetup.png" width="80%" alt="Application setup"/>
+applicationsetup
 It's also required to add some device filter (uuid or name).
 
 Now we can see our application listed on main page and use from there.
 
 ## More information
 
-For more GATT protocol detailed information check [GATT]().
+For more GATT protocol information check [GATT]().
 
 
 
