@@ -37,7 +37,7 @@ In order to get this app working, we need to provide it with some information ab
 
 <img src="https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/mainpage.JPG" width="80%"/>
 
-![](https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/mainpage.JPG | width=100 "Blueapp main page")
+<!-- ![](https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/mainpage.JPG | width=100 "Blueapp main page") -->
 
 After getting new account, we are able to open just our new organization, but at this point we are unable to see any of the gateways assigned to that organization. For testing purposes we can switch to some existing organization with already attached gateway with nearby bluetooth devices.
 In order to enter to particular organization, we need owner's invitation. Please send email for invitation request with requesting email address on kranti@vensi.com, and you will get one in short term.
