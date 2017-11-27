@@ -136,14 +136,16 @@ Let's open our organization in organizations tab. There we can see all the organ
 Before we can add app to our organization, we have to post our app on some domain service, and set application's url to applications page. (You can upload it on your github account)
 
 <img src="https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/applicationsetup.png" width="80%" alt="Application setup"/>
-applicationsetup
+
 It's also required to add some device filter (uuid or name).
 
 Now we can see our application listed on main page and use from there.
 
 ## More information
 
-For more GATT protocol information check [GATT]().
+For more GATT protocol information check [GATT](https://www.bluetooth.com/specifications/gatt/generic-attributes-overview).
+
+If you need more information about Web Bluetooth visit official [page](https://webbluetoothcg.github.io/web-bluetooth).
 
 
 
