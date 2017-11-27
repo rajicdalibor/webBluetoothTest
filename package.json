@@ -1,0 +1,12 @@
+{
+  "name": "vt-demo",
+  "author": {
+    "name": "Darko Rajic",
+    "email": "darko.rajic@vensi.com"
+  },
+  "version": "0.0.1",
+  "description": "Visible things demo app",
+  "dependencies": {
+    "blueapp-wb" : "latest"
+  }
+}
