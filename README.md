@@ -35,7 +35,7 @@ because it's already in package.json.
 
 In order to get this app working, we need to provide it with some information about gateway. In order to get some information first we need to open account on BlueApp.io webpage:
 
-<img src="https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/mainpage.JPG" width="80%"/>
+<img src="https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/mainpage.png" width="80%"/>
 
 <!-- ![](https://github.com/rajicdalibor/webBluetoothTest/blob/master/images/mainpage.JPG | width=100 "Blueapp main page") -->
 
