@@ -1,6 +1,6 @@
 # Visible Things Demo App
 
-##Basic Overview
+## Basic Overview
 Visible Things is application based on BlueApp platform for demonstration and testing purposes for developers who use BlueApp Web Bluetooth library for discovering and reading data from BLE device.
 
 
