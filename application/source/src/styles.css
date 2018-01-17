@@ -1,0 +1,262 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body{
+  margin: 0;
+  padding: 0;
+  font-family:"Roboto";
+  font-weight: 600;
+  height: 100%;
+
+}
+html {
+  height: 100%;
+
+}
+.wrapper {
+  min-height:100%;
+  position:relative;
+}
+.container{
+  width: 100%;
+  padding-bottom:250px;
+}
+
+.p10{
+  padding: 10px;
+}
+
+.pb0{
+  padding-bottom: 0;
+}
+
+.mb0{
+  margin-bottom: 0;
+}
+
+.pt0{
+  padding-top: 0;
+}
+
+.mt0{
+  margin-top: 0;
+}
+
+.ml0{
+  margin-left: 10%;
+}
+
+.toolbar{
+  background-color: black;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%  !important;
+}
+
+.footer{
+  width:100%;
+  height:250px;
+  position:absolute;
+  bottom:0;
+  left:0;
+  text-align:center;
+  min-height: 250px;
+}
+
+.logo{
+  width: 40px;
+  height: 40px;
+}
+.example-form {
+  width: 100%;
+}
+
+.pl5lr5{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.pt10pb10{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.p5{
+  padding: 5px;
+}
+
+.pl5{
+  padding-left: 5px;
+}
+
+.pl20{
+  padding-left: 20px;
+}
+
+.m40{
+  margin-top: 40px;
+}
+
+.colorWhite{
+  color: white;
+}
+
+.logoStyle{
+  margin-left: 20px;
+  font-size: 25px;
+}
+
+.mr5{
+  margin-right: 5%;
+}
+
+.taCenter{
+  text-align: center;
+}
+
+.onHover :hover{
+  background-color: #EDEEF0;
+}
+
+.onHoverUnderline :hover{
+  text-decoration: underline;
+}
+
+.box {
+  width: 100%;
+  border-top: 2px solid lightgray;
+  min-height: 50px;
+  margin-left: 5px;
+  padding-left: 10px;
+}
+
+.box-search {
+  width: 100%;
+  min-height: 50px;
+}
+
+.title{
+  margin-top: 50px;
+  font-size: 30px;
+}
+
+.dark{
+  background-color: black;
+  color: white;
+}
+
+.img{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.img-large{
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+}
+
+.img-footer{
+  height: 100%;
+  max-height: 120px;
+  border-radius: 10%;
+}
+
+.clickable{
+  cursor: pointer;
+}
+.artists{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+  min-height: 70px;
+}
+
+.albums{
+  border-bottom: 1px solid black;
+  min-height: 40px;
+}
+
+.artistImage{
+  max-width:70%;
+  max-height:70%;
+}
+
+.fw{
+  width: 100%;
+}
+
+.albumImage{
+  max-height:200px;
+}
+
+.tracks{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  margin:5px;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.image-container{
+  max-width: 180px;
+  position: relative;
+}
+
+.image-container:hover .image {
+  opacity: 0.3;
+}
+
+.image-container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: rgba(9, 28, 27, 0.68);
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+@media only screen and (max-width: 600px) {
+  .img-footer {
+    max-height: 40px;
+  }
+
+  .img-album {
+    padding-top: 30px;
+    max-height: 120px;
+  }
+
+  .text {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (min-width: 600px)  {
+  .img-album{
+    max-height:200px;
+  }
+}
+
+
