@@ -1,0 +1,11 @@
+{
+  "author": "Rajic Dalibor",
+  "name": "MusicBox",
+  "description": "3ap assignment app",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "~4.0.0",
+    "path": "latest",
+    "request": "^2.83.0"
+  }
+}

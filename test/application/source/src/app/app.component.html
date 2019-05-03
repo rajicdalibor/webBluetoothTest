@@ -1,0 +1,196 @@
+<div class="wrapper">
+  <div class="fw">
+
+    <!--Toolbar-->
+    <mat-toolbar class="toolbar">
+      <div fxLayout="row" fxFlex="100" class="colorWhite" fxLayoutAlign="start center">
+        <div fxFlex="30" fxLayout="row" fxLayoutAlign="start center">
+          <div>
+            <img class="logo" src="../assets/logo.png">
+          </div>
+          <div class="logoStyle">
+            MusicBOX
+          </div>
+        </div>
+        <div fxFlex="70" fxLayout="row" fxLayoutAlign="end center">
+          <div *ngIf="searchTab" class="mr5" style="border-bottom: solid white">
+            <img class="logo" src="../assets/ic_search_white_36px.svg">
+          </div>
+          <div class="clickable mr5" *ngIf="!searchTab" (click)="searchTabActive()">
+            <img class="logo" src="../assets/ic_search_white_36px.svg">
+          </div>
+          <div *ngIf="settingsTab" class="mr5" style="border-bottom: solid white">
+            <img class="logo" src="../assets/ic_settings_white_36px.svg">
+          </div>
+          <div class="clickable mr5" *ngIf="!settingsTab" (click)="settingsTabActive()">
+            <img class="logo" src="../assets/ic_settings_white_36px.svg">
+          </div>
+          <div class="clickable">
+            <img (click)="openUserDialog()" class="logo" src="../assets/ic_account_circle_white_36px.svg">
+          </div>
+        </div>
+      </div>
+    </mat-toolbar>
+  </div>
+
+  <!--Main container-->
+  <div class="container">
+    <div fxLayoutAlign="center center">
+      <div fxFlex="95" fxFlex.gt-sm="50">
+        <div fxLayout="column" fxLayoutAlign="center center" *ngIf="searchTab">
+          <div fxFlex="100" class="title taCenter">
+            SEARCH FOR YOUR FAVORITE ARTIST
+          </div>
+          <form class="example-form" fxFlex="100" fxLayout="row" fxLayoutAlign="center end">
+
+            <mat-form-field class="box-search m40">
+              <input matInput #message maxlength="256" placeholder="Artist" [(ngModel)]="artistForSearch"
+                     name="artistForSearch" style="font-family: 'Roboto'">
+              <mat-hint align="start" style="font-family: 'Roboto'"><strong>First or last name of artist</strong>
+              </mat-hint>
+            </mat-form-field>
+            <button mat-raised-button mat-primary
+                    style="height: 40px; margin-bottom: 20px; margin-left: 10px; font-family: 'Roboto'"
+                    (click)="search()" [disabled]="!artistForSearch">SEARCH
+            </button>
+          </form>
+          <div fxLayoutAlign="start center" class="box-search" fxLayout="row">
+            Searched:&nbsp;
+            <div *ngFor="let artist of searchHistory">
+              {{artist}}&nbsp;
+            </div>
+
+          </div>
+          <div id="searchResults" class="fw">
+          <div fxLayoutAlign="start center" class="box-search dark m40" *ngIf="activeSearchedArtist.length > 0">
+            <div class="pl5lr5">
+              Search results
+            </div>
+          </div>
+          </div>
+          <div class="box-search">
+            <div *ngFor="let artist of activeSearchedArtist | limitTo : 10" fxLayoutAlign="start center"
+                 class="artists onHover">
+              <div fxFlex="100" fxLayoutAlign="start center" (click)="artistDetails(artist)" class="clickable">
+                <div fxFlex="50" class="pl5lr5" style="height: 50px; padding-top: 15px">
+                  {{artist.name}}
+                </div>
+                <div fxFlex="50" fxLayoutAlign="end center">
+                  <div *ngIf="artist.images.length > 0" class="pl5lr5">
+                    <img class="img" src={{artist.images[0].url}}>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="artistDetails" class="fw">
+          <div *ngIf="selectedArtist" class="box-search m40 pt10pb10" fxLayoutAlign="start center">
+            <div fxFlex="100" fxLayoutAlign="start center">
+              <h1 fxFlex="50">
+                {{selectedArtist.name}}
+              </h1>
+              <div *ngIf="selectedArtist.images.length > 0" fxFlex="50" fxLayoutAlign="end center">
+                <img class="img-large" src={{selectedArtist.images[0].url}}>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div fxFlex="100" fxLayout="column" class="fw">
+            <div fxLayoutAlign="start center" fxLayout="row" class="dark" *ngIf="selectedArtist">
+              <h2 fxFlex="50" class="pl5lr5">
+                Albums
+              </h2>
+              <div fxFlex="50" fxLayoutAlign="end center" style="margin-right: 3%">
+                <h4 *ngIf="selectedArtist" class="clickable" (click)="artistDetails(selectedArtist, true)">NEXT</h4>
+              </div>
+            </div>
+            <div *ngFor="let album of artistAlbums" fxLayoutAlign="start center" class="albums">
+              <div fxFlex="100" fxLayoutAlign="start center" (click)="openAlbum(album)" class="clickable onHoverUnderline">
+                <div fxFlex="100" class="pl5lr5">
+                  {{album.name}}
+                </div>
+              </div>
+            </div>
+            <div id="albumDetails">
+            <div class="box-search m40 fw" fxLayoutAlign="center center" fxLayout="row" fxFlex="100"
+                 *ngIf="selectedAlbum && selectedAlbum.images.length > 0">
+              <div fxFlex="100" fxLayoutAlign="center center">
+                <div fxFlex="100" fxLayoutAlign="start start">
+                  <div fxFlex="50" fxLayoutAlign="start start" fxLayout="column" class="fw">
+                    <h2 class="fw">{{selectedAlbum.name}}</h2>
+                    <h4 class="fw mb0 p5 dark">Authors:</h4>
+                    <mat-list *ngFor="let artist of selectedAlbum.artists" fxLayoutAlign="start center">
+                      <mat-list-item fxFlex="100" fxLayoutAlign="start center" (click)="newArtist(artist.id)"
+                                     class="clickable onHoverUnderline">
+                        <div fxFlex="50">
+                          {{artist.name}}
+                        </div>
+                      </mat-list-item>
+                    </mat-list>
+                  </div>
+                  <div fxFlex="50" fxLayoutAlign="end center">
+                    <img class="img-album" src={{selectedAlbum.images[0].url}}>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div fxLayoutAlign="start start" fxFlex="100" class="m40" *ngIf="selectedAlbum" fxLayout="column">
+              <div fxLayoutAlign="start center" fxLayout="row" class="dark fw">
+                <h2 fxFlex="50" class="pl5lr5">
+                  Tracks
+                </h2>
+              </div>
+              <div *ngFor="let track of selectedAlbum.tracks.items" fxLayoutAlign="start start">
+                <div fxFlex="100" fxLayoutAlign="start start" class="clickable onHoverUnderline">
+                  <h4 class="mb0 pb0 pl20" fxFlex="100" (click)="trackDialog(track)">
+                    {{track.name}}
+                  </h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Settings page-->
+        <div fxLayoutAlign="center center" *ngIf="settingsTab">
+          <div fxFlex="95" fxFlex.gt-sm="50" fxLayout="column" class="taCenter">
+            <h1 class="title taCenter">APPLICATION SETTINGS</h1>
+            <div>
+              <h3 class="dark p10">Visible recently viewed albums:&nbsp;{{visibleAlbums}}</h3>
+              <mat-slider min="3" max={{albumsToStore}} step="1" [(ngModel)]="visibleAlbums"
+                          (ngModelChange)="updateSavedAlbums()" class="fw"></mat-slider>
+            </div>
+            <div>
+              <h3 class="dark p10">Stored recently viewed albums:&nbsp;{{albumsToStore}}</h3>
+              <mat-slider min={{visibleAlbums}} max="8" step="1" [(ngModel)]="albumsToStore"
+                          (ngModelChange)="updateSavedAlbums()" class="fw"></mat-slider>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--Footer-->
+  <footer class="footer" fxLayoutAlign="center center" *ngIf="searchTab">
+    <div fxFlex="95" fxFlex.gt-sm="50" style="border-top: 2px solid lightgray" fxLayout="column"
+         fxLayoutAlign="start start">
+      <h4 class="mb0 pb0">Recently Viewed:</h4>
+      <div fxLayoutAlign="start center" fxFlex="100" class="fw mb0 pb0">
+        <div fxFlex="100" fxLayout="row" fxLayoutWrap fxLayoutAlign="start center" class="tracks"
+             *ngFor="let album of storedAlbumsToView">
+          <div fxFlex class="clickable" (click)="openAlbum(album)">
+            <div class="image-container">
+              <img class="image" src={{album.images[0].url}}>
+              <div class="middle">
+                <div class="text">{{album.name}}</div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
